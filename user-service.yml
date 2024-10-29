@@ -1,0 +1,48 @@
+server:
+  port: 8083
+ servlet:
+   contextPath: /api/user
+
+spring:
+  application:
+    name: user-service
+    
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Root_@123
+    url: jdbc:mysql://localhost:3306/ExpenseTrackerApplicationDB?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+  
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        temp:
+          use_jdbc_metadata_defaults: false;
+      
+  sql:
+    init:
+      continue-on-error: true
+      mode: always
+      
+      
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: kailashyandrapu@gmail.com
+    password: gvsgfhvmjhxfqwta
+    properties:
+     mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+          
+          
+          
