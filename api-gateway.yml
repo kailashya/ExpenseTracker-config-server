@@ -1,33 +1,31 @@
 spring:
   application:
-    name: API GATEWAY
+    name: API-GATEWAY
   cloud:
     gateway:
       routes:
-        -id: USER-SERVICE
-         uri: 
-           lb: //USER-SERVICE
-         predicates:
+        - id: USER-SERVICE
+          uri: 
+           lb://USER-SERVICE
+          predicates:
            - Path = /api/user/**
 
-        -id: EXPENSE-SERVICE
-         uri:
-          lb: //EXPENSE-SERVICE
-        predicates:
+        - id: EXPENSE-SERVICE
+          uri:
+           lb://EXPENSE-SERVICE
+          predicates:
            - Path= /api/expense/**
 
-    default-filters:
+      default-filters:
+        DedupeResponseHeader-Access-Control-Allow-Credentials Access-Control-Allow-Origin
 
-DedupeResponseHeader-Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
 
-globalcors:
+         '[/**]':
 
-corsConfigurations:
+            allowedOrigins: "*"
 
-'[/**]':
+            allowedMethods: "*"
 
-allowedOrigins:
-
-allowedMethods:
-
-allowedHeaders:
+            allowedHeaders: "*"
