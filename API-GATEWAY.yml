@@ -1,6 +1,6 @@
 spring:
-  application:
-    name: API-GATEWAY
+  # application:
+  #   name: API-GATEWAY
   cloud:
     gateway:
       routes:
