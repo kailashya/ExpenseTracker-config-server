@@ -24,7 +24,12 @@ spring:
           lb://EXPENSE-SERVICE
         predicates:
         - Path=/api/expense/**
-         
+
+     - id: PUSHNOTIFICATION-SERVICE
+        uri:
+          lb://PUSHNOTIFICATION-SERVICE
+        predicates:
+        - Path=/api/notification/**
      
          
       default-filters:
