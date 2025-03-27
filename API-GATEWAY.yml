@@ -25,7 +25,7 @@ spring:
         predicates:
         - Path=/api/expense/**
 
-     - id: PUSHNOTIFICATION-SERVICE
+      - id: PUSHNOTIFICATION-SERVICE
         uri:
           lb://PUSHNOTIFICATION-SERVICE
         predicates:
