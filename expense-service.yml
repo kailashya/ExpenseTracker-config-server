@@ -4,8 +4,8 @@ server:
   #  contextPath: /api/expense
 
 spring:
-  application:
-    name: expense-service
+  # application:
+  #   name: expense-service
     
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
