@@ -1,7 +1,7 @@
 server:
   port: 8081
-  servlet:
-   contextPath: /api/expense
+  # servlet:
+  #  contextPath: /api/expense
 
 spring:
   application:
