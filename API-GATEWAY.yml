@@ -59,6 +59,8 @@ spring:
           uri: lb://PUSH-NOTIFICATION-SERVICE
           predicates:
             - Path=/api/notification/**
+          filters:
+            - RewritePath=/api/notification/(?<segment>.*), /${segment} # Rewrite path for WebSocket
       
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
