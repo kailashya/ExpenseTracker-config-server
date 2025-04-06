@@ -39,48 +39,27 @@
 
 
 
+  - id: Expense-SERVICE
+    uri:
+      lb://EXPENSE-SERVICE
+    predicates:
+    - Path=/api/expense/**
 
-server:
-  port: 8080
-  
-spring:
-  # application:
-  #   name: API_GATEWAY 
-    
-
-  cloud:
-    gateway:
-      routes:
-      - id: USER-SERVICE
-        uri:
-          lb://USER-SERVICE
-        predicates:
-        - Path=/api/user/**
-        
-      
-        
-      - id: Expense-SERVICE
-        uri:
-          lb://EXPENSE-SERVICE
-        predicates:
-        - Path=/api/expense/**
-
-      - id: PUSHNOTIFICATION-SERVICE
-        uri:
-          lb://PUSHNOTIFICATION-SERVICE
-        predicates:
-        - Path=/api/notification/**
+  - id: PUSHNOTIFICATION-SERVICE
+    uri:
+      lb://PUSHNOTIFICATION-SERVICE
+    predicates:
+    - Path=/api/notification/**
+ 
      
-         
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-              allowedOrigins: "*"
-              allowedMethods: "*"
-              allowedHeaders: "*"  
-  
+  default-filters:
+    - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+  globalcors:
+    corsConfigurations:
+      '[/**]':
+          allowedOrigins: "*"
+          allowedMethods: "*"
+          allowedHeaders: "*"  
 
   
       
