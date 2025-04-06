@@ -56,8 +56,8 @@ spring:
           predicates:
             - Path=/api/expense/**
         
-        - id: PUSHNOTIFICATION-SERVICE
-          uri: lb://PUSHNOTIFICATION-SERVICE
+        - id: PUSH-NOTIFICATION-SERVICE
+          uri: lb://PUSH-NOTIFICATION-SERVICE
           predicates:
             - Path=/api/notification/**
       
