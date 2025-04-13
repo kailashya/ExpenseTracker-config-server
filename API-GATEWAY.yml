@@ -58,9 +58,9 @@ spring:
         - id: PUSH-NOTIFICATION-SERVICE
           uri: lb://PUSH-NOTIFICATION-SERVICE
           predicates:
-            - Path=/api/notification/**
-          filters:
-            - RewritePath=/api/notification/ws, /ws
+            - Path=/ws
+          # filters:
+          #   - RewritePath=/api/notification/ws, /ws
       
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
