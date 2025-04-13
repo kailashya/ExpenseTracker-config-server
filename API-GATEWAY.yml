@@ -21,7 +21,7 @@ spring:
             - Path=/api/notification/**
           filters:
             - RewritePath=/api/notification/ws, /ws
-      a
+            
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       
