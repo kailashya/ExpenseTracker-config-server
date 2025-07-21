@@ -20,7 +20,7 @@ spring:
           predicates:
             - Path=/api/notification/**
           filters:
-            - RewritePath=/api/notification/ws, /ws
+            - RewritePath=/api/notification/(?<segment>.*), /${segment}
             
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
